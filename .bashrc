@@ -14,5 +14,11 @@ alias ll='ls -lh'
 alias la='ls -latr'
 alias grep='grep --color=auto'
 
+# My scripts
+alias git-key="~/.scripts/git-key.sh"
 # My prompt
 PS1='[\u@\h \W]\$ '
+
+# Start ssh-agent on shell startup
+eval "$(ssh-agent -s)"
+
