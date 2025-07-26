@@ -16,6 +16,7 @@ alias grep='grep --color=auto'
 
 # My scripts
 alias git-key="~/.scripts/git-key.sh"
+alias us="~/.scripts/update-snapshot.sh"
 
 # My prompt
 PS1='[\u@\h \W]\$ '
