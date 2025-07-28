@@ -1,0 +1,132 @@
+* {
+    border: none;
+    font-family: JetBrains Mono NL Nerd Font, Font Awesome, Roboto, Arial, sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 7px;
+}
+
+window {
+	/*font-weight: bold;*/
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+}
+
+/*-----module groups----*/
+.modules-right {
+    background-color: rgba(0,43,51,0.85);
+    margin: 2px 10px 0 0;
+    border: 2px solid rgba(0, 85, 102, 0.7);
+}
+.modules-center {
+    background-color: transparent; 
+    margin: 2px 0 0 0;
+}
+.modules-left {
+    background-color: transparent;
+    margin: 2px 0 0 0;
+}
+
+/*-----modules indv----*/
+
+/* --- WORKSPACES --- */
+#workspaces {
+    padding: 0 5px;
+}
+
+#workspaces button {
+    margin: 3px 4px;
+    padding: 3px 8px;
+/*    border-radius: 7px; */
+    background-color: rgba(0, 43, 51, 0.85);
+    color: #ffffff;
+    border: 2px solid rgba(0, 85, 102, 0.7);
+    transition: background-color 0.2s, color 0.2s, border 0.2s;
+}
+
+#workspaces button.active {
+    background-color: rgba(0, 153, 153, 1);
+    border: 2px solid rgba(0, 119, 179, 0.9);
+}
+#workspaces button:hover {
+    background-color: rgba(0, 153, 153, 1);
+    border: 2px solid rgba(0, 119, 179, 0.9);
+}
+
+#workspaces button.focused {
+    background-color: rgba(0, 119, 179, 0.9);
+    border: 1px solid rgba(0, 153, 153, 1);
+    color: #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #cc3436;
+    border: 1px solid #ff5555;
+    color: #ffffff;
+}
+
+/* ----- Other Modules ----- */
+#clock {
+    margin: 3px 4px;
+    padding: 3px 8px;
+    border-radius: 7px;
+    background-color: rgba(0, 43, 51, 0.85);
+    color: #ffffff;
+    border: 2px solid rgba(0, 85, 102, 0.7);
+}
+
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#custom-power,
+#idle_inhibitor {
+    padding: 0 10px;
+}
+
+#mode {
+    color: #cc3436;
+    font-weight: bold;
+}
+
+#custom-power {
+    background-color: rgba(0,119,179,0.6);
+    border-radius: 50px;
+    margin: 5px 5px;
+    padding: 1px 3px;
+}
+
+/*-----Indicators----*/
+#idle_inhibitor.activated {
+    color: #2dcc36;
+}
+#pulseaudio.muted {
+    color: #cc3436;
+}
+#battery.charging {
+    color: #2dcc36;
+}
+#battery.warning:not(.charging) {
+	color: #e6e600;
+}
+#battery.critical:not(.charging) {
+    color: #cc3436;
+}
+#temperature.critical {
+    color: #cc3436;
+}
+
+/*-----Colors----*/
+/*
+ * rgba(0,85,102,1), #005566 --> Indigo(dye)
+ * rgba(0,43,51,1), #002B33 --> Dark Green 
+ * rgba(0,153,153,1), #009999 --> Persian Green 
+ */
+
