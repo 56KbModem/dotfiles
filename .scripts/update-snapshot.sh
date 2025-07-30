@@ -12,35 +12,50 @@ create_root_snapshot(){
 	fi
 }
 
-delete_root_snapshot(){
-	echo "[!] Checking for existing snapshots...";
-	EXISTING=$(ls /snapshots/);
-	if [ ! -z $EXISTING ]; then
-		echo "[!] Existing snapshots: $EXISTING ";
+delete_root_snapshot() {
+    local EXISTING=("$@")
 
-		# Prompt for deletion of snapshot
-		read -r -p "[?] Do you want to delete this snapshot? [y/N] " response
-		response=${response,,}  # to lowercase
-		if [[ "$response" == "y" || "$response" == "yes" ]]; then
-    		echo "[-] Deleting snapshot: $EXISTING";
-			sudo btrfs subvolume delete /snapshots/$EXISTING;
-			exit;
-		else
-			echo "[!] Operation cancelled.";
-			exit;
-		fi
-	else
-		echo "[!] No snapshots currently, exiting";
-		exit;
-	fi
+    if [ ${#EXISTING[@]} -ne 0 ]; then
+        PS3="[?] Which snapshot to delete? [q to cancel]: "
+        select option in "${EXISTING[@]}"; do
+            case $option in
+                'q' | '')
+                    echo "[!] Operation cancelled."
+                    break
+                    ;;
+                *)
+                    read -r -p "[?] Do you want to delete this snapshot? [y/N] " response
+                    response=${response,,}  # to lowercase
+                    if [[ "$response" == "y" || "$response" == "yes" ]]; then
+                        echo "[-] Deleting snapshot: $option"
+                        sudo btrfs subvolume delete "$option"
+                        break
+                    else
+                        echo "[!] Operation cancelled."
+                        break
+                    fi
+                    ;;
+            esac
+        done
+    else
+        echo "[!] No snapshots currently, exiting"
+        exit
+    fi
 }
 
-read -r -p "[!] (C)reate snapshot, (D)elete snapshot, (E)xit [c/d/E] " response
+# Main function:
+echo "[!] --- Update Snapshots --- [!]"
+echo "[!] Checking for existing snapshots...";
+EXISTING=(/snapshots/*);
+echo "[!] Existing snapshots: $EXISTING ";
+
+# User menu:
+read -r -p "[?] (C)reate snapshot, (D)elete snapshot, (E)xit [c/d/E] " response
 response=${response,,} # to lowercase
 if [[ "$response" == "c" ]]; then
 	create_root_snapshot;
 elif [[ "$response" == "d" ]]; then
-	delete_root_snapshot;
+    delete_root_snapshot "${EXISTING[@]}"
 else
 	echo "[!] Goodbye!";
 	exit;
