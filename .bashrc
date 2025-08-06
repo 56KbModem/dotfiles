@@ -17,8 +17,8 @@ alias grep='grep --color=auto'
 alias open='xdg-open'
 
 # My scripts
-alias git-key="~/.scripts/git-key.sh"
 alias us="~/.scripts/update-snapshot.sh"
+alias sqr="~/.scripts/scan-qr.sh"
 
 # My prompt
 PS1='[\u@\h \W]\$ '
