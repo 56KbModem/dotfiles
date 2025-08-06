@@ -3,6 +3,7 @@
 create_root_snapshot(){
 	TARGET=/snapshots/root_$(date "+%d-%m-%Y");
 	read -r -p "[?] Do you wish to create a snapshot at $TARGET ? [y/N] " response
+    response=${response,,}  # to lowercase
 	if [[ "$response" == "y" || "$response" == "yes" ]]; then
 		echo "[+] Creating root snapshot in $TARGET";
 		sudo btrfs subvolume snapshot / $TARGET;
