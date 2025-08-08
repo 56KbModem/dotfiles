@@ -8,6 +8,7 @@
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
 
 # My aliases
+alias hostname='hostnamectl hostname'
 alias nv='nvim'
 alias vi='nvim'
 alias ls='ls --color=auto'
