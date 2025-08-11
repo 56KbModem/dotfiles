@@ -49,6 +49,7 @@ echo "[!] --- Update Snapshots --- [!]"
 echo "[!] Checking for existing snapshots...";
 EXISTING=(/snapshots/*)
 
+# Show snapshots as numbered list:
 if [ ${#EXISTING[@]} -eq 0 ]; then
     echo "[!] No snapshots found."
 else
