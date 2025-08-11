@@ -39,7 +39,7 @@ delete_root_snapshot() {
             esac
         done
     else
-        echo "[!] No snapshots currently, exiting"
+        echo "[!] No snapshots currently, exiting."
         exit
     fi
 }
@@ -47,8 +47,18 @@ delete_root_snapshot() {
 # Main function:
 echo "[!] --- Update Snapshots --- [!]"
 echo "[!] Checking for existing snapshots...";
-EXISTING=(/snapshots/*);
-echo "[!] Existing snapshots: $EXISTING ";
+EXISTING=(/snapshots/*)
+
+if [ ${#EXISTING[@]} -eq 0 ]; then
+    echo "[!] No snapshots found."
+else
+    echo "[!] Existing snapshots:"
+    i=1
+    for snapshot in "${EXISTING[@]}"; do
+        echo "  $i) $snapshot"
+        ((i++))
+    done
+fi
 
 # User menu:
 read -r -p "[?] (C)reate snapshot, (D)elete snapshot, (E)xit [c/d/E] " response
