@@ -54,7 +54,7 @@ else
     echo "[!] Existing snapshots:"
     i=1
     for snapshot in "${EXISTING[@]}"; do
-        echo "  $i) $snapshot"
+        echo "$i) $snapshot"
         ((i++))
     done
 fi

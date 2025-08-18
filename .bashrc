@@ -16,6 +16,7 @@ alias la='ls -latr'
 alias grep='grep --color=auto'
 alias open='xdg-open'
 alias hostname='hostnamectl hostname'
+alias nb='newsboat'
 
 # My scripts
 alias us="~/.scripts/update-snapshot.sh"

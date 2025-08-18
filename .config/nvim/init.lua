@@ -33,7 +33,20 @@ vim.opt.guicursor = ""
 -- Clear search highlight when pressing Esc
 vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR><Esc>', { noremap = true, silent = true })
 
+-- Set 'vim' colorscheme
+vim.cmd.colorscheme('vim')
+
  -- Set colors for relative linenumbers
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='orange' })
 vim.api.nvim_set_hl(0, 'LineNr', { fg='yellow' })
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='orange' })
+
+-- Do not make words bold (ChatGPT...)
+for _, group in ipairs(vim.fn.getcompletion('', 'highlight')) do
+  local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = group })
+  if ok then
+    hl.bold = false
+    vim.api.nvim_set_hl(0, group, hl)
+  end
+end
+
