@@ -34,7 +34,7 @@ vim.opt.guicursor = ""
 vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR><Esc>', { noremap = true, silent = true })
 
 -- Set 'vim' colorscheme
-vim.cmd.colorscheme('vim')
+vim.cmd.colorscheme('default')
 
  -- Set colors for relative linenumbers
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='orange' })
