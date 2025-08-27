@@ -6,9 +6,9 @@ max_brightness=$(brightnessctl max)
 percent=$(( brightness * 100 / max_brightness ))
 
 # Choose icon based on brightness level
-if [ "$percent" -ge 80 ]; then
+if [ "$percent" -ge 70 ]; then
     icon="🌞"
-elif [ "$percent" -ge 40 ]; then
+elif [ "$percent" -ge 30 ]; then
     icon="🌤️"
 else
     icon="🌑"
