@@ -1,0 +1,9 @@
+configuration {
+    display-drun: "Applications:";
+    display-window: "Workspaces:";
+    drun-display-format: "{icon} {name}";
+    font: "JetBrainsMono Nerd Font 15";
+    modi: "window,run,drun";
+    show-icons: true;
+}
+@theme "rounded-nord-dark.rasi"
