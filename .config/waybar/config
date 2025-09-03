@@ -28,8 +28,9 @@
         "spacing": 10
     },
     "clock": {
+        "format": "{:%H:%M | %d-%m-%Y}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d-%m-%Y}"
+        "format-alt": "{:%d %B %Y}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -51,7 +52,7 @@
         "states": {
             // "good": 95,
             "warning": 20,
-            "critical": 10
+            "critical": 15
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
