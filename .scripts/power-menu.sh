@@ -21,7 +21,7 @@ host=`hostnamectl hostname`
 # Options
 shutdown='  shutdown'
 reboot='  reboot'
-lock='  lock screen'
+lock='  lock'
 suspend='  suspend'
 logout='󰈆  logout'
 yes=''
@@ -30,8 +30,8 @@ no=''
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
-		-p "Uptime: $uptime" \
-		-mesg "Uptime: $uptime" \
+		-p "Power Menu" \
+		-mesg "$host: up $uptime" \
 		-theme ${dir}/${theme}.rasi
 }
 
