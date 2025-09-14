@@ -33,7 +33,7 @@ vim.opt.guicursor = ""
 -- Clear search highlight when pressing Esc
 vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR><Esc>', { noremap = true, silent = true })
 
--- Set 'vim' colorscheme
+-- Set colorscheme
 vim.cmd.colorscheme('default')
 
  -- Set colors for relative linenumbers
