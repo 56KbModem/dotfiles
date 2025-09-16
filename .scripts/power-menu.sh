@@ -31,7 +31,6 @@ no=''
 rofi_cmd() {
 	rofi -dmenu \
 		-p "Power Menu" \
-		-mesg "$host: up $uptime" \
 		-theme ${dir}/${theme}.rasi
 }
 
@@ -95,7 +94,7 @@ case ${chosen} in
         ;;
     $logout)
 		run_cmd --logout
-		hyprctl dispatch exit
+#		hyprctl dispatch exit
         ;;
 esac
 
