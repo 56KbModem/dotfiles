@@ -94,6 +94,6 @@
 
 	"custom/power": {
 		"format": "",
-		"on-click": "wlogout"
+		"on-click": "~/.scripts/power-menu.sh"
 	}
 }
