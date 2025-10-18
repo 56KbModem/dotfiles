@@ -1,3 +1,7 @@
+-- Set leader key to Space
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Tab and indentation settings
 vim.opt.tabstop = 4        -- Number of visual spaces per tab
 vim.opt.shiftwidth = 4     -- Number of spaces to use for autoindent
