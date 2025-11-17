@@ -38,7 +38,8 @@
 	"on-click": "kitty -e btop"
     },
     "memory": {
-        "format": "{}% ",
+        "format": "{used}G/{total}G ",
+        "tooltip-format": "{percentage}%",
 	"on-click": "kitty -e btop"
     },
     "temperature": {

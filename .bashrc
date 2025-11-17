@@ -26,6 +26,11 @@ alias sqr="~/.scripts/scan-qr.sh"
 # My prompt
 PS1='[\u@\h \W]\$ '
 
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
 # Set vi mode
 set -o vi
 bind "\"\C-l\": clear-screen" # otherwise Ctrl-l is unbound
