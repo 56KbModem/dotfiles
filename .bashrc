@@ -23,8 +23,8 @@ alias t='tmux'
 alias us="~/.scripts/update-snapshot.sh"
 alias sqr="~/.scripts/scan-qr.sh"
 
-# My prompt
-PS1='[\u@\h \W]\$ '
+# My prompt (with colors)
+PS1="[\u@\h \[\033[1;34m\]\W\[\033[0m\]]\$ "
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in

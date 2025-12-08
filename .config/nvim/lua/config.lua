@@ -1,3 +1,4 @@
+-- Basic Vim options Config
 -- Set leader key to Space
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -30,9 +31,6 @@ vim.g.clipboard = {
   },
   cache_enabled = 0,
 }
-
--- Keep my cursor fattttt
-vim.opt.guicursor = ""
 
 -- Clear search highlight when pressing Esc
 vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR><Esc>', { noremap = true, silent = true })
