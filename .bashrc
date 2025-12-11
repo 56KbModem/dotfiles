@@ -18,10 +18,13 @@ alias open='xdg-open'
 alias hostname='hostnamectl hostname'
 alias nb='newsboat'
 alias t='tmux'
+alias d='docker'
+alias dps='docker ps'
 
 # My scripts
 alias us="~/.scripts/update-snapshot.sh"
 alias sqr="~/.scripts/scan-qr.sh"
+alias mz="~/.scripts/make-zettelkasten.sh"
 
 # My prompt (with colors)
 PS1="[\u@\h \[\033[1;34m\]\W\[\033[0m\]]\$ "
