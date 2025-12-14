@@ -75,7 +75,6 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		run_cmd
 		hyprlock
         ;;
     $suspend)

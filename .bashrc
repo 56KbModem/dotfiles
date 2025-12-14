@@ -7,8 +7,9 @@
 
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
 
+# Load aliases from file
 if [ -f ~/.bash_aliases ]; then
-. ~/.bash_aliases
+    source ~/.bash_aliases
 fi
 
 # My prompt (with colors)
@@ -22,3 +23,7 @@ esac
 # Set vi mode
 set -o vi
 bind "\"\C-l\": clear-screen" # otherwise Ctrl-l is unbound
+
+# Use fzf integrations
+source /usr/share/fzf/completion.bash
+source /usr/share/fzf/key-bindings.bash

@@ -5,5 +5,6 @@ configuration {
     font: "JetBrainsMono Nerd Font 16";
     modi: "window,run,drun";
     show-icons: true;
+    sorting-method: "fzf";
 }
 @theme "rounded-nord-dark.rasi"
