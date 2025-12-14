@@ -7,24 +7,9 @@
 
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
 
-# My aliases
-alias nv='nvim'
-alias vi='nvim'
-alias ls='ls --color=auto'
-alias ll='ls -lh'
-alias la='ls -latr'
-alias grep='grep --color=auto'
-alias open='xdg-open'
-alias hostname='hostnamectl hostname'
-alias nb='newsboat'
-alias t='tmux'
-alias d='docker'
-alias dps='docker ps'
-
-# My scripts
-alias us="~/.scripts/update-snapshot.sh"
-alias sqr="~/.scripts/scan-qr.sh"
-alias mz="~/.scripts/make-zettelkasten.sh"
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
 
 # My prompt (with colors)
 PS1="[\u@\h \[\033[1;34m\]\W\[\033[0m\]]\$ "
