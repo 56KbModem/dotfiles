@@ -1,8 +1,8 @@
-ZETTELKASTEN_DIR="$HOME/Documents/private/zettelkasten/"
+ZETTELKASTEN_DIR="$HOME/Documents/private/zettelkasten/inbox"
 DATE="$(date +%Y%m%d%H%M)"
 
 read -r -p "What do you want to write about?: " response;
-response=${response,,}; 
+response=${response,,}; # to lowercase
 response=$(echo $response | tr ' ' '-'); 
 
 ZETTEL="$ZETTELKASTEN_DIR$DATE-$response.md";

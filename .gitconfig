@@ -1,3 +1,5 @@
 [user]
 	email = 25609156+56KbModem@users.noreply.github.com
 	name = 56KbModem
+[init]
+	defaultBranch = main
