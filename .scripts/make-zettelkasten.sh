@@ -1,4 +1,4 @@
-ZETTELKASTEN_DIR="$HOME/Documents/private/zettelkasten/inbox"
+ZETTELKASTEN_DIR="$HOME/Documents/private/zettelkasten/inbox/"
 DATE="$(date +%Y%m%d%H%M)"
 
 read -r -p "What do you want to write about?: " response;
