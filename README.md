@@ -1,4 +1,4 @@
-# Dotfilez!
+# My Dotfiles!
 
 This repo stores my dotfiles, nothing else.
 
