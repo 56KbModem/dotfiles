@@ -13,6 +13,7 @@ alias nb="newsboat"
 alias t="tmux"
 alias d="docker"
 alias dps="docker ps"
+alias dil="docker image ls"
 alias fzf="fzf --preview='bat {}'"
 
 # My scripts
