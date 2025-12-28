@@ -52,3 +52,10 @@ for _, group in ipairs(vim.fn.getcompletion('', 'highlight')) do
   end
 end
 
+-- Highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank({ timeout = 100 })
+    end,
+})
+
