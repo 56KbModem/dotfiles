@@ -13,6 +13,7 @@ alias nb="newsboat"
 alias t="tmux"
 alias d="docker"
 alias fzf="fzf --preview='bat {}'"
+alias b="bat"
 
 # My scripts
 alias us="~/.scripts/update-snapshot.sh"
