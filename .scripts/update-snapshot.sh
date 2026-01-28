@@ -46,6 +46,9 @@ delete_root_snapshot() {
 echo "[!] --- Update Snapshots --- [!]"
 echo "[!] Checking for existing snapshots...";
 EXISTING=(/snapshots/*)
+if [ "${EXISTING[0]}" = "/snapshots/*" ]; then
+    EXISTING=()
+fi
 
 # Show snapshots as numbered list:
 if [ ${#EXISTING[@]} -eq 0 ]; then
