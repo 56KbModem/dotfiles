@@ -1,12 +1,12 @@
 #!/bin/bash
 
 create_root_snapshot(){
-	TARGET=/snapshots/root_$(date "+%d-%m-%Y");
+    TARGET=/snapshots/root_$(date "+%Y-%m-%d")
 	read -r -p "[?] Do you wish to create a snapshot at $TARGET ? [y/N] " response
     response=${response,,}  # to lowercase
 	if [[ "$response" == "y" || "$response" == "yes" ]]; then
 		echo "[+] Creating root snapshot in $TARGET";
-		sudo btrfs subvolume snapshot / $TARGET;
+		sudo btrfs subvolume snapshot -r / "$TARGET";
 	else
 		echo "[!] Operation cancelled.";
 	fi
@@ -42,36 +42,58 @@ delete_root_snapshot() {
     fi
 }
 
-# Main function:
 echo "[!] --- Update Snapshots --- [!]"
-echo "[!] Checking for existing snapshots...";
-EXISTING=(/snapshots/*)
-if [ "${EXISTING[0]}" = "/snapshots/*" ]; then
-    EXISTING=()
-fi
 
-# Show snapshots as numbered list:
+# Function to refresh snapshot array
+refresh_snapshots() {
+    EXISTING=(/snapshots/*)
+    # Handle empty directory
+    if [ "${EXISTING[0]}" = "/snapshots/*" ]; then
+        EXISTING=()
+    fi
+}
+
+# Initial snapshot check
+refresh_snapshots
 if [ ${#EXISTING[@]} -eq 0 ]; then
     echo "[!] No snapshots found."
 else
     echo "[!] Existing snapshots:"
-    i=1
-    for snapshot in "${EXISTING[@]}"; do
-        echo "$i) $snapshot"
-        ((i++))
+    for idx in "${!EXISTING[@]}"; do
+        echo "$((idx + 1))) $(basename "${EXISTING[$idx]}")"
     done
 fi
 
-# User menu:
+# User menu loop
 while true; do
-    read -r -p "[?] (C)reate snapshot, (D)elete snapshot, (E)xit [c/d/E] " response
-    response=${response,,} # to lowercase
-    if [[ "$response" == "c" ]]; then
-        create_root_snapshot;
-    elif [[ "$response" == "d" ]]; then
-        delete_root_snapshot "${EXISTING[@]}"
-    else
-        echo "[!] Goodbye!";
-        exit;
-    fi
+    refresh_snapshots  # Always refresh before showing menu
+
+    read -r -p "[?] (C)reate snapshot, (D)elete snapshot, (E)xit [c/d/e] " response
+    response=${response,,} # lowercase
+
+    case "$response" in
+        c)
+            create_root_snapshot
+            ;;
+        d)
+            if [ ${#EXISTING[@]} -eq 0 ]; then
+                echo "[!] No snapshots to delete."
+            else
+                delete_root_snapshot "${EXISTING[@]}"
+            fi
+            ;;
+        e)
+            read -r -p "[?] Are you sure you want to exit? [y/N] " confirm
+            confirm=${confirm,,}
+            if [[ "$confirm" == "y" || "$confirm" == "yes" ]]; then
+                echo "[!] Goodbye!"
+                exit 0
+            else
+                continue
+            fi
+            ;;
+        *)
+            echo "[!] Invalid choice. Please enter C, D, or E."
+            ;;
+    esac
 done
