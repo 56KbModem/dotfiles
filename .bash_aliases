@@ -20,5 +20,4 @@ alias b="bat"
 # My scripts
 alias us="~/.scripts/update-snapshot.sh"
 alias sqr="~/.scripts/scan-qr.sh"
-alias mz="~/.scripts/make-zettelkasten.sh"
 alias sa=". ~/.scripts/agent-setup.sh"
