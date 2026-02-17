@@ -3,7 +3,7 @@
     font-family: JetBrains Mono NL Nerd Font, Font Awesome, Roboto, Arial, sans-serif;
     font-size: 18px;
     color: #ffffff;
-    border-radius: 7px;
+    border-radius: 0px;
 }
 
 window {
@@ -16,9 +16,9 @@ window#waybar {
 
 /*-----module groups----*/
 .modules-right {
-    background-color: rgba(0,43,51,0.85);
+    background-color: transparent;
     margin: 2px 10px 0 0;
-    border: 2px solid rgba(0, 85, 102, 0.7);
+    border: none;
 }
 .modules-center {
     background-color: transparent; 
@@ -40,23 +40,23 @@ window#waybar {
     margin: 3px 4px;
     padding: 3px 8px;
 /*    border-radius: 7px; */
-    background-color: rgba(0, 43, 51, 0.85);
+    background-color: #2e3440;
     color: #ffffff;
-    border: 2px solid rgba(0, 85, 102, 0.7);
+    border: 2px solid #5e81ac;
     transition: background-color 0.2s, color 0.2s, border 0.2s;
 }
 
 #workspaces button.active {
-    background-color: rgba(0, 153, 153, 1);
-    border: 2px solid rgba(0, 119, 179, 0.9);
+    background-color: #2e3440;
+    border: 2px solid #eceff4;
 }
 #workspaces button:hover {
     background-color: rgba(0, 153, 153, 1);
-    border: 2px solid rgba(0, 119, 179, 0.9);
+    border: 2px solid #8fbcbb;
 }
 
 #workspaces button.focused {
-    background-color: rgba(0, 119, 179, 0.9);
+    background-color: #8fbcbb;
     border: 1px solid rgba(0, 153, 153, 1);
     color: #ffffff;
 }
@@ -71,36 +71,52 @@ window#waybar {
 #clock {
     margin: 3px 4px;
     padding: 3px 8px;
-    border-radius: 7px;
-    background-color: rgba(0, 43, 51, 0.85);
+    border-radius: 0px;
+    background-color: #2e3440;
     color: #ffffff;
-    border: 2px solid rgba(0, 85, 102, 0.7);
+    border: 2px solid #5e81ac;
 }
 
-#battery,
 #cpu,
 #memory,
-#temperature,
-#network,
-#pulseaudio,
-#custom-media,
-#tray,
-#mode,
-#custom-power,
-#idle_inhibitor {
-    padding: 0 10px;
+#temperature {
+    margin: 3px 4px;
+    padding: 3px 4px;
+    border-radius: 0px;
+    background-color: #2e3440;
+    color: #ffffff;
+    border: 2px solid #5e81ac /* rgba(0, 85, 102, 0.7);*/
+}
+#network {
+    margin: 3px 4px;
+    padding: 3px 8px;
+    border-radius: 0px;
+    background-color: #2e3440;
+    color: #ffffff;
+    border: 2px solid #81a1c1 /* rgba(0, 85, 102, 0.7);*/
+}
+#pulseaudio {
+    margin: 3px 4px;
+    padding: 3px 8px;
+    border-radius: 0px;
+    background-color: #2e3440;
+    color: #ffffff;
+    border: 2px solid #8fbcbb /* rgba(0, 85, 102, 0.7); */
+
+}
+#battery,
+#custom-power {
+    margin: 3px 4px;
+    padding: 3px 8px;
+    border-radius: 0px;
+    background-color: #2e3440;
+    color: #ffffff;
+    border: 2px solid #b48ead/* rgba(0, 85, 102, 0.7); */
 }
 
 #mode {
     color: #cc3436;
     font-weight: bold;
-}
-
-#custom-power {
-    background-color: rgba(0,119,179,0.6);
-    border-radius: 50px;
-    margin: 5px 5px;
-    padding: 1px 3px;
 }
 
 /*-----Indicators----*/

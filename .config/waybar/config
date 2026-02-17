@@ -1,7 +1,7 @@
 {
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "cpu", "memory", "pulseaudio", "temperature", "battery", "custom/power"],
+    "modules-right": ["cpu", "memory", "temperature", "network", "pulseaudio", "battery", "custom/power"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -9,7 +9,7 @@
 		"format": "{id}"
 	},
     "network": {
-        "format-wifi": "",
+        "format-wifi": " ",
         "format-ethernet": "{ifname} ",
         "format-disconnected": "", 
 	"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
@@ -33,12 +33,12 @@
         "format-alt": "{:%d %B %Y}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}%  ",
         "tooltip": false,
 	"on-click": "kitty -e btop"
     },
     "memory": {
-        "format": "{used}G/{total}G ",
+        "format": "{used}G/{total}G  ",
         "tooltip-format": "{percentage}%",
 	"on-click": "kitty -e btop"
     },
@@ -55,10 +55,10 @@
             "warning": 20,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format": "{capacity}% {icon} ",
+        "format-charging": "{capacity}%  ",
+        "format-plugged": "{capacity}%  ",
+        "format-alt": "{time} {icon} ",
         "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
@@ -81,20 +81,8 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    },
-
 	"custom/power": {
-		"format": "",
+		"format": "  " ,
 		"on-click": "~/.scripts/power-menu.sh"
 	}
 }
