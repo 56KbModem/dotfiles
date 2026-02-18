@@ -1,7 +1,7 @@
 {
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "temperature", "network", "pulseaudio", "battery", "custom/power"],
+    "modules-right": ["cpu", "memory", "temperature", "network", "bluetooth", "pulseaudio", "battery", "custom/power"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -12,9 +12,11 @@
         "format-wifi": " ",
         "format-ethernet": "{ifname} ",
         "format-disconnected": "", 
+        "format-disabled": "󰖪 ",
 	"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
         "max-length": 50,
-        "on-click": "kitty -e 'nmtui'"
+        "on-click": "~/.scripts/toggle-wifi.sh",
+        "on-click-right": "kitty -e 'nmtui'"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -80,6 +82,16 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱 ",
+        "format-disabled": "󰂲",
+        "tooltip-format": "{controller_alias}\n{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\n{controller_address}\n\n{device_enumerate}",
+        "on-click": "~/.scripts/toggle-bluetooth.sh",
+        "on-click-right": "kitty -e bluetoothctl",
+        "interval": 5
     },
 	"custom/power": {
 		"format": "  " ,

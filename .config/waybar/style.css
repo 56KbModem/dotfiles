@@ -1,7 +1,7 @@
 * {
     border: none;
     font-family: JetBrains Mono NL Nerd Font, Font Awesome, Roboto, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     color: #ffffff;
     border-radius: 0px;
 }
@@ -87,13 +87,14 @@ window#waybar {
     color: #ffffff;
     border: 2px solid #5e81ac /* rgba(0, 85, 102, 0.7);*/
 }
+#bluetooth,
 #network {
     margin: 3px 4px;
     padding: 3px 8px;
     border-radius: 0px;
     background-color: #2e3440;
     color: #ffffff;
-    border: 2px solid #81a1c1 /* rgba(0, 85, 102, 0.7);*/
+    border: 2px solid #8fbcbb /* rgba(0, 85, 102, 0.7); */
 }
 #pulseaudio {
     margin: 3px 4px;
@@ -101,7 +102,7 @@ window#waybar {
     border-radius: 0px;
     background-color: #2e3440;
     color: #ffffff;
-    border: 2px solid #8fbcbb /* rgba(0, 85, 102, 0.7); */
+    border: 2px solid #81a1c1 /* rgba(0, 85, 102, 0.7);*/
 
 }
 #battery,

@@ -41,7 +41,7 @@ prompt {
 
 entry {
     placeholder:        "Search";
-    placeholder-color:  @fg3;
+    placeholder-color:  @fg0;
 }
 
 message {
