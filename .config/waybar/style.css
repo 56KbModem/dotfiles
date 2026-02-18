@@ -42,17 +42,17 @@ window#waybar {
 /*    border-radius: 7px; */
     background-color: #2e3440;
     color: #ffffff;
-    border: 2px solid #5e81ac;
+    border: 3px solid #5e81ac;
     transition: background-color 0.2s, color 0.2s, border 0.2s;
 }
 
 #workspaces button.active {
     background-color: #2e3440;
-    border: 2px solid #eceff4;
+    border: 3px solid #eceff4;
 }
 #workspaces button:hover {
     background-color: rgba(0, 153, 153, 1);
-    border: 2px solid #8fbcbb;
+    border: 3px solid #8fbcbb;
 }
 
 #workspaces button.focused {
@@ -74,18 +74,18 @@ window#waybar {
     border-radius: 0px;
     background-color: #2e3440;
     color: #ffffff;
-    border: 2px solid #5e81ac;
+    border: 3px solid #5e81ac;
 }
 
 #cpu,
 #memory,
 #temperature {
     margin: 3px 4px;
-    padding: 3px 4px;
+    padding: 3px 8px;
     border-radius: 0px;
     background-color: #2e3440;
     color: #ffffff;
-    border: 2px solid #5e81ac /* rgba(0, 85, 102, 0.7);*/
+    border: 3px solid #5e81ac /* rgba(0, 85, 102, 0.7);*/
 }
 #bluetooth,
 #network {
@@ -94,7 +94,7 @@ window#waybar {
     border-radius: 0px;
     background-color: #2e3440;
     color: #ffffff;
-    border: 2px solid #8fbcbb /* rgba(0, 85, 102, 0.7); */
+    border: 3px solid #8fbcbb /* rgba(0, 85, 102, 0.7); */
 }
 #pulseaudio {
     margin: 3px 4px;
@@ -102,7 +102,7 @@ window#waybar {
     border-radius: 0px;
     background-color: #2e3440;
     color: #ffffff;
-    border: 2px solid #81a1c1 /* rgba(0, 85, 102, 0.7);*/
+    border: 3px solid #81a1c1 /* rgba(0, 85, 102, 0.7);*/
 
 }
 #battery,
@@ -112,7 +112,7 @@ window#waybar {
     border-radius: 0px;
     background-color: #2e3440;
     color: #ffffff;
-    border: 2px solid #b48ead/* rgba(0, 85, 102, 0.7); */
+    border: 3px solid #b48ead/* rgba(0, 85, 102, 0.7); */
 }
 
 #mode {
