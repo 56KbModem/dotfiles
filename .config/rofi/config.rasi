@@ -2,7 +2,7 @@ configuration {
     display-drun: "Applications:";
     display-window: "Workspaces:";
     drun-display-format: "{icon} {name}";
-    font: "JetBrainsMono Nerd Font 16";
+    font: "JetBrainsMono Nerd Font 20";
     modi: "window,run,drun";
     show-icons: true;
     sorting-method: "fzf";
