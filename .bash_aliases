@@ -16,6 +16,7 @@ alias nb="newsboat"
 alias t="tmux"
 alias d="docker"
 alias b="bat"
+alias cal="cal -m"
 
 # My scripts
 alias us="~/.scripts/update-snapshot.sh"
