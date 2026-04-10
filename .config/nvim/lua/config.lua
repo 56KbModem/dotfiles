@@ -35,14 +35,6 @@ vim.g.clipboard = {
 -- Clear search highlight when pressing Esc
 vim.keymap.set('n', '<Esc>', '<Cmd>nohlsearch<CR><Esc>', { noremap = true, silent = true })
 
--- Set colorscheme
-vim.cmd.colorscheme('default')
-
- -- Set colors for relative linenumbers
-vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='orange' })
-vim.api.nvim_set_hl(0, 'LineNr', { fg='yellow' })
-vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='orange' })
-
 -- Do not make words bold (ChatGPT...)
 for _, group in ipairs(vim.fn.getcompletion('', 'highlight')) do
   local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = group })
@@ -59,3 +51,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- Add nightfox colorscheme
+vim.pack.add({
+  { src = "https://github.com/EdenEast/nightfox.nvim" }
+})
+
+require("nightfox").setup({})
+vim.cmd("colorscheme nordfox")
