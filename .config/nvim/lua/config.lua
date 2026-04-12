@@ -55,6 +55,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.pack.add({
   { src = "https://github.com/EdenEast/nightfox.nvim" }
 })
-
 require("nightfox").setup({})
 vim.cmd("colorscheme nordfox")
