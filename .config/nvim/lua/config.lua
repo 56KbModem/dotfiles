@@ -57,3 +57,5 @@ vim.pack.add({
 })
 require("nightfox").setup({})
 vim.cmd("colorscheme nordfox")
+
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
