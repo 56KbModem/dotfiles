@@ -3,6 +3,7 @@ vim.pack.add({
   "https://github.com/nvim-lua/plenary.nvim",           -- required dependency
   "https://github.com/nvim-telescope/telescope.nvim",   -- main telescope
   -- Optional but highly recommended: fzf-native for much faster sorting
+  "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
 })
 
 require('telescope').setup({
@@ -14,11 +15,18 @@ require('telescope').setup({
       },
     },
   },
-  pickers = {
-    find_files = { theme = "ivy" },
-    live_grep = { theme = "ivy" },
+  extensions = {
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    },
   },
 })
+
+-- Call the fzf extension (needs to be compiled manually!)
+pcall(require('telescope').load_extension, 'fzf')
 
 -- Keymaps
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Find files' })

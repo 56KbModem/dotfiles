@@ -8,4 +8,3 @@ vim.lsp.enable("pyright")
 vim.lsp.enable("yamlls")
 vim.lsp.enable("bashls")
 vim.lsp.enable("gopls")
-
