@@ -1,7 +1,6 @@
 # Here live my aliases;
 
 # My aliases
-alias nv="nvim"
 alias vi="nvim"
 alias ls="ls --color=auto"
 alias ll="ls -lh"
@@ -17,6 +16,8 @@ alias t="tmux"
 alias d="docker"
 alias b="bat"
 alias cal="cal -m"
+alias y="yazi"
+alias virsh="virsh -c qemu:///system"
 
 # My scripts
 alias us="~/.scripts/update-snapshot.sh"
