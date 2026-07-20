@@ -23,5 +23,13 @@ else
     bar_value=$volume
 fi
 
-# Send notification with progress bar using dunstify
-dunstify --timeout=2000 -a "volume" "$icon Volume" "$message" -h int:value:"$bar_value" -u low -r 9991
+# volume
+ID_FILE="/tmp/notify-volume.id"
+ID=$(cat "$ID_FILE" 2>/dev/null)
+
+NOTIFY_ID=$(notify-send --expire-time=2000 -a "volume" -u low \
+  -h int:value:"$bar_value" \
+  --print-id ${ID:+--replace-id="$ID"} \
+  "$icon Volume" "$message")
+
+echo "$NOTIFY_ID" > "$ID_FILE"
