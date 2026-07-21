@@ -44,7 +44,6 @@ local mailClient   = "thunderbird"
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 hl.on("hyprland.start", function()
     hl.exec_cmd("swaybg -i ~/Pictures/wall.png &")
-    hl.exec_cmd("waybar &")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("~/.scripts/sunset.sh") -- Night-shift like behaviour
 end)
@@ -75,8 +74,8 @@ hl.env("GDK_DPI_SCALE", "1.25")
 -- See https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
     general = {
-        gaps_in = 2,
-        gaps_out = 4,
+        gaps_in     = 2,
+        gaps_out    = 4,
         border_size = 2,
         col = {
             active_border = { colors = { "rgba(bee6ffaa)", "rgba(5e81acaa)" }, angle = 45 },
@@ -199,16 +198,16 @@ hl.bind(mainMod .. " + BACKSPACE", hl.dsp.exec_cmd("~/.scripts/power-menu.sh"))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("~/.scripts/scan-qr.sh"))
 
 -- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "l" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "r" }))
-hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "u" }))
-hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "d" }))
+hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "l" }))
+hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "r" }))
+hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "u" }))
+hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "d" }))
 
 -- Move windows with mainMod + shift + arrow keys
-hl.bind(mainMod .. " + SHIFT + left", hl.dsp.window.move({ direction = "l" }))
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "r" }))
-hl.bind(mainMod .. " + SHIFT + up", hl.dsp.window.move({ direction = "u" }))
-hl.bind(mainMod .. " + SHIFT + down", hl.dsp.window.move({ direction = "d" }))
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "r" }))
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "d" }))
 
 -- Switch workspaces with mainMod + [0-9], move window with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
