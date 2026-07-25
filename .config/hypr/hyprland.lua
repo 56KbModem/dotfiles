@@ -33,7 +33,6 @@ hl.monitor({ output = "DP-5",
 ---- MY PROGRAMS ----
 ---------------------
 local terminal    = "kitty"
-local fileManager  = terminal .. " -e yazi"
 local menu         = "rofi -show drun"
 local browser      = "firefox"
 local mailClient   = "thunderbird"
@@ -58,6 +57,7 @@ hl.env("HYPRCURSOR_SIZE", "28")
 hl.env("GTK_THEME", "Adwaita:dark")
 hl.env("GDK_SCALE", "1.5")
 hl.env("GDK_DPI_SCALE", "1.25")
+hl.env("MANPAGER", "nvim +Man!")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -187,27 +187,26 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(mailClient))
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.exec_cmd("rofi -show window"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.scripts/toggle-waybar.sh"))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/screenshot.png'))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
 hl.bind(mainMod .. " + BACKSPACE", hl.dsp.exec_cmd("~/.scripts/power-menu.sh"))
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("~/.scripts/scan-qr.sh"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "l" }))
-hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "r" }))
-hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "d" }))
+hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "u" }))
+hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "r" }))
 
 -- Move windows with mainMod + shift + arrow keys
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "l" }))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "r" }))
-hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "u" }))
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "d" }))
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "r" }))
 
 -- Switch workspaces with mainMod + [0-9], move window with mainMod + SHIFT + [0-9]
 for i = 1, 10 do

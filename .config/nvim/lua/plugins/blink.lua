@@ -14,6 +14,9 @@ require("blink.cmp").setup({
   appearance = { nerd_font_variant = "mono" },
   completion = {
     documentation = { auto_show = true },
+    list = {
+        selection = { preselect = false, auto_insert = false },
+    }
   },
   sources = {
     default = { "lsp", "path", "snippets", "buffer" },
@@ -22,7 +25,7 @@ require("blink.cmp").setup({
 })
 
 -- Toggle completion on/off for the current buffer
-vim.keymap.set("n", "<leader>tc", function()
+vim.keymap.set("n", "<leader>bl", function()
   local ok, blink = pcall(require, "blink.cmp")
   if ok and blink.is_visible and blink.is_visible() then
     blink.hide()

@@ -58,7 +58,7 @@ run_cmd() {
 		elif [[ $1 == '--suspend' ]]; then
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-            sleep 1; hyprctl dispatch exit
+            sleep 1; hyprctl dispatch 'hl.dsp.exit()'
 		fi
 	else
 		exit 0
