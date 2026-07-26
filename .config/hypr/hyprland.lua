@@ -1,9 +1,3 @@
--- #######################################################################################
--- CONVERTED FROM hyprlang (hyprland.conf) TO Lua, for Hyprland >= 0.55.
--- Save this as ~/.config/hypr/hyprland.lua (Hyprland loads .lua if present, else .conf).
--- Refer to the wiki for more information: https://wiki.hypr.land/Configuring/Start/
--- #######################################################################################
-
 ------------------
 ---- MONITORS ----
 ------------------
@@ -76,7 +70,7 @@ hl.config({
     general = {
         gaps_in     = 2,
         gaps_out    = 4,
-        border_size = 2,
+        border_size = 3,
         col = {
             active_border = { colors = { "rgba(bee6ffaa)", "rgba(5e81acaa)" }, angle = 45 },
             inactive_border = "rgba(595959aa)",
