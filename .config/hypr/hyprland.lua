@@ -88,8 +88,8 @@ hl.config({
     decoration = {
         rounding = 2,
         rounding_power = 0,
-        active_opacity = 0.95,
-        inactive_opacity = 0.8,
+        active_opacity = 1,
+        inactive_opacity = 1,
         shadow = {
             enabled = true,
             range = 4,
@@ -97,10 +97,10 @@ hl.config({
             color = "rgba(1a1a1aee)",
         },
         blur = {
-            enabled = true,
-            size = 3,
-            passes = 1,
-            vibrancy = 0.1696,
+            enabled = false,
+            -- size = 3,
+            -- passes = 1,
+            -- vibrancy = 0.1696,
         },
     },
     animations = {
