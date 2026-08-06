@@ -12,7 +12,7 @@ vim.lsp.config('*', {
   capabilities = require('blink.cmp').get_lsp_capabilities(),
 })
 
-local servers = { "go", "bash", "python", "rust", "yaml" }
+local servers = { "go", "bash", "python", "rust", "yaml", "clangd" }
 for _, server in ipairs(servers) do
   require('lsp.' .. server)
 end

@@ -1,3 +1,4 @@
+-- lua/lsp/go.lua
 vim.lsp.config.gopls = {
   cmd = { "gopls" },
   filetypes = { "go", "gomod", "gowork", "gotmpl" },
